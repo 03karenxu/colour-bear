@@ -16,11 +16,11 @@ export default function SidebarControls({
 }) {
   const { hasImage } = palette;
   return (
-    <div className="flex flex-col desktop:flex-row items-center gap-1 self-stretch desktop:mt-1">
+    <div className="flex items-center gap-1 desktop:mt-1">
       <IconButton
         label="New image"
         icon={ImagePlus}
-        className="desktop:-ml-2"
+        className="-ml-2"
         onClick={onNewImage}
         disabled={!hasImage}
       />
@@ -47,14 +47,14 @@ export default function SidebarControls({
       <IconButton
         label="Undo"
         icon={Undo}
-        className="mobile:mt-auto desktop:ml-auto"
+        className="ml-auto"
         onClick={palette.undo}
         disabled={!palette.canUndo}
       />
       <IconButton
         label="Redo"
         icon={Redo}
-        className="desktop:-mr-2"
+        className="-mr-2"
         onClick={palette.redo}
         disabled={!palette.canRedo}
       />

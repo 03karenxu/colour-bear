@@ -106,7 +106,7 @@ export default function SidebarImage({
         setDragging(false);
         handleFile(e.dataTransfer.files[0]);
       }}
-      className={`relative mobile:h-100 bg-surface rounded-lg overflow-hidden border border-dashed transition-colors ${boxColours}`}
+      className={`relative flex-1 min-h-100 desktop:min-h-0 bg-surface rounded-lg overflow-hidden border border-dashed transition-colors ${boxColours}`}
     >
       <input
         ref={inputRef}

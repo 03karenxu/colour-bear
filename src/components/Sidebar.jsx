@@ -25,24 +25,33 @@ export default function Sidebar({ palette, isOpen, onCollapse }) {
   return (
     <aside
       inert={!isOpen}
-      className={`desktop:flex desktop:justify-end desktop:overflow-hidden desktop:transition-[width] desktop:duration-300 desktop:ease-snappy ${isOpen ? "desktop:w-sidebar" : "desktop:w-0"}`}
+      className={`mobile:contents desktop:flex desktop:justify-end desktop:overflow-hidden desktop:transition-[width] desktop:duration-300 desktop:ease-snappy ${isOpen ? "desktop:w-sidebar" : "desktop:w-0"}`}
     >
-      <div className="flex flex-col gap-4 desktop:gap-6 desktop:w-sidebar desktop:shrink-0 p-4 desktop:p-6 desktop:border-r mobile:border-b border-line-light desktop:overflow-y-auto">
-        <header className="flex items-center justify-between h-8 mobile:h-14">
-          <h1 className="flex items-center gap-2 font-logo text-2xl tracking-wider">
-            <AnimatedLogo colours={palette.colours} />
-            colour bear
-          </h1>
-          <IconButton
-            label="Hide controls"
-            icon={ArrowLeftToLine}
-            className="mobile:hidden -mr-2"
-            onClick={onCollapse}
+      <div className="mobile:contents desktop:flex desktop:flex-col desktop:gap-4 desktop:w-sidebar desktop:shrink-0 desktop:p-6 desktop:border-r border-line-light desktop:overflow-y-auto">
+        <div className="mobile:sticky mobile:top-0 mobile:z-10 flex flex-col gap-4 mobile:p-4 mobile:bg-white mobile:border-b border-line-light">
+          <header className="flex items-center justify-between h-8 mobile:h-9">
+            <h1 className="flex items-center gap-2 font-logo text-2xl tracking-wider">
+              <AnimatedLogo colours={palette.colours} />
+              colour bear
+            </h1>
+            <IconButton
+              label="Hide controls"
+              icon={ArrowLeftToLine}
+              className="mobile:hidden -mr-2"
+              onClick={onCollapse}
+            />
+            {exportButton("desktop:hidden")}
+          </header>
+          <SidebarControls
+            palette={palette}
+            onNewImage={() => fileInputRef.current.click()}
+            adjustOpen={adjustOpen}
+            onToggleAdjust={() => setAdjustOpen(!adjustOpen)}
           />
-          {exportButton("desktop:hidden")}
-        </header>
+        </div>
 
-        <div className="grid grid-cols-[1fr_auto] desktop:grid-cols-1 desktop:grid-rows-[1fr_auto] desktop:flex-1 desktop:min-h-0 mobile:items-start gap-4">
+        <div className="flex flex-col gap-4 mobile:p-4 mobile:border-b border-line-light desktop:flex-1 desktop:min-h-0">
+          {adjustOpen && <SidebarAdjust palette={palette} />}
           <SidebarImage
             onImageLoad={palette.loadImage}
             inputRef={fileInputRef}
@@ -52,15 +61,6 @@ export default function Sidebar({ palette, isOpen, onCollapse }) {
             onHoverColour={palette.setPreview}
             onCancelPick={palette.stopPicking}
           />
-          <SidebarControls
-            palette={palette}
-            onNewImage={() => fileInputRef.current.click()}
-            adjustOpen={adjustOpen}
-            onToggleAdjust={() => setAdjustOpen(!adjustOpen)}
-          />
-          {adjustOpen && (
-            <SidebarAdjust palette={palette} className="col-span-full" />
-          )}
         </div>
         {exportButton("mobile:hidden")}
         <ExportModal colours={palette.colours} />
