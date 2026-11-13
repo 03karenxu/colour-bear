@@ -1,5 +1,7 @@
 ![Colour Bear preview](public/og.png)
 
+[Colour Bear](https://03karenxu.github.io/colour-bear/)
+
 Generate UI-ready colour palettes from any image.
 
 Drop in an image and Colour Bear pulls a palette from it. Mix or pick colours straight from the image, generate Tailwind shades, then export as CSS or Tailwind.
