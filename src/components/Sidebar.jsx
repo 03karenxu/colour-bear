@@ -50,10 +50,8 @@ export default function Sidebar({ palette, isOpen, onCollapse }) {
           />
         </div>
 
-        <div className="flex flex-col gap-8 mobile:p-4 mobile:border-b border-line-light desktop:flex-1 desktop:min-h-0">
-          {adjustOpen && (
-            <SidebarAdjust palette={palette} className="desktop:-mt-1" />
-          )}
+        <div className="flex flex-col gap-4 mobile:p-4 mobile:border-b border-line-light desktop:flex-1 desktop:min-h-0">
+          {adjustOpen && <SidebarAdjust palette={palette} />}
           <SidebarImage
             onImageLoad={palette.loadImage}
             inputRef={fileInputRef}
