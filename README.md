@@ -1,5 +1,3 @@
-# Colour Bear
-
 ![Colour Bear preview](public/og.png)
 
 Generate UI-ready colour palettes from any image.
