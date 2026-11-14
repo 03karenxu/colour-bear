@@ -143,7 +143,7 @@ export default function SidebarImage({
       <button
         onClick={() => setFailed(false)}
         title="Dismiss"
-        className={`absolute inset-x-0 bottom-4 mx-auto w-fit px-3 py-2 rounded-lg backdrop-blur-xs shadow-sm bg-red-700/80 border border-white/40 text-sm font-semibold text-white cursor-pointer transition-[opacity,translate,visibility] duration-300 ease-snappy ${failed ? "visible" : "invisible opacity-0 translate-y-2"}`}
+        className={`absolute inset-x-0 bottom-4 mx-auto w-fit px-3 py-2 rounded-lg bg-red/90 backdrop-blur-xs shadow-sm text-sm font-semibold text-white cursor-pointer transition-[opacity,translate,visibility] duration-300 ease-snappy ${failed ? "visible" : "invisible opacity-0 translate-y-2"}`}
       >
         Couldn't load that image
       </button>

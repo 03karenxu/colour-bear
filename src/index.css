@@ -34,6 +34,7 @@
 @theme {
   --color-white: #fafafa;
   --color-black: #110F0E;
+  --color-red: #D21922;
   --container-sidebar: clamp(20rem, 25vw, 40rem);
   --color-surface: var(--color-neutral-100);
   --color-line-light: var(--color-neutral-200);
