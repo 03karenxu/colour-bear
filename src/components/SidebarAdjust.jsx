@@ -1,9 +1,9 @@
 import Slider from "./Slider";
 
-export default function SidebarAdjust({ palette, className = "" }) {
+export default function SidebarAdjust({ palette }) {
   const { adjustments, hasImage } = palette;
   return (
-    <div className={`flex flex-col gap-4 ${className}`}>
+    <div className="flex flex-col gap-4 mb-2">
       {[
         { key: "h", type: "hue", min: -180, max: 180 },
         { key: "s", type: "saturation", min: -100, max: 100 },

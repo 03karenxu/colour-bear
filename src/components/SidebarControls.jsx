@@ -16,7 +16,7 @@ export default function SidebarControls({
 }) {
   const { hasImage } = palette;
   return (
-    <div className="flex items-center gap-1 desktop:mt-1">
+    <div className="flex items-center gap-1 -my-2">
       <IconButton
         label="New image"
         icon={ImagePlus}
